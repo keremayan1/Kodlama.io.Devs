@@ -17,6 +17,7 @@ namespace Persistance
         {
             services.AddDbContext<SQLContext>();
             services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
+            services.AddScoped<IProgrammingLanguageTechnologyRepository, ProgrammingLanguageTechnologyRepository>();
             return services;
         }
     }

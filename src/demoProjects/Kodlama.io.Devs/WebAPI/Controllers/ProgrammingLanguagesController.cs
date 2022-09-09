@@ -1,13 +1,13 @@
-﻿using Application.Features.ProgrammingLanguage.Commands.CreateProgrammingLanguage;
-using Application.Features.ProgrammingLanguage.Dtos;
+﻿using Application.Features.ProgrammingLanguages.Commands.CreateProgrammingLanguage;
+using Application.Features.ProgrammingLanguages.Dtos;
 using Core.Application.Requests;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-using Application.Features.ProgrammingLanguage.Queries.GetListProgrammingLanguage;
-using Application.Features.ProgrammingLanguage.Queries.GetByProgrammingLanguageId;
-using Application.Features.ProgrammingLanguage.Commands.UpdateProgrammingLanguage;
-using Application.Features.ProgrammingLanguage.Commands.DeleteProgrammingLanguage;
+using Application.Features.ProgrammingLanguages.Queries.GetListProgrammingLanguage;
+using Application.Features.ProgrammingLanguages.Queries.GetByProgrammingLanguageId;
+using Application.Features.ProgrammingLanguages.Commands.UpdateProgrammingLanguage;
+using Application.Features.ProgrammingLanguages.Commands.DeleteProgrammingLanguage;
 
 namespace WebAPI.Controllers
 {
@@ -21,6 +21,7 @@ namespace WebAPI.Controllers
             CreateProgrammingLanguageDto result = await Mediator.Send(createProgrammingLanguageCommand);
             return Created("", result);
         }
+       
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] PageRequest pageRequest)
         {
