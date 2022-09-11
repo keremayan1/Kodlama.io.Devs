@@ -18,8 +18,8 @@ namespace Application.Features.ProgrammingLanguages.Commands.CreateProgrammingLa
         {
             private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
             private readonly IMapper _mapper;
-            private readonly ProgrammingLanguagesRules _programmingLanguageRules;
-            public CreateProgrammingLanguageCommandHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgrammingLanguagesRules programmingLanguageRules)
+            private readonly ProgrammingLanguageBusinessRules _programmingLanguageRules;
+            public CreateProgrammingLanguageCommandHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgrammingLanguageBusinessRules programmingLanguageRules)
             {
                 _programmingLanguageRepository = programmingLanguageRepository;
                 _mapper = mapper;

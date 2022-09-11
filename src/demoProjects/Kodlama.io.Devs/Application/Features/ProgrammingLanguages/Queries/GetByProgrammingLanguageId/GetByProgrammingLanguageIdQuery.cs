@@ -18,9 +18,9 @@ namespace Application.Features.ProgrammingLanguages.Queries.GetByProgrammingLang
         {
             private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
             private readonly IMapper _mapper;
-            private readonly ProgrammingLanguagesRules _programmingLanguageRules;
+            private readonly ProgrammingLanguageBusinessRules _programmingLanguageRules;
 
-            public GetByProgrammingLanguageIdQueryHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgrammingLanguagesRules programmingLanguageRules)
+            public GetByProgrammingLanguageIdQueryHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgrammingLanguageBusinessRules programmingLanguageRules)
             {
                 _programmingLanguageRepository = programmingLanguageRepository;
                 _mapper = mapper;

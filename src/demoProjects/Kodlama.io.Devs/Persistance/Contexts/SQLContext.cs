@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Core.Security.Entities;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -14,6 +15,10 @@ namespace Persistance.Contexts
         public IConfiguration Configuration { get; set; }
         public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
         public DbSet<ProgrammingLanguageTechnology> ProgrammingLanguageTechnologies { get; set; }
+        public DbSet<Developer> Developers { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
 
         public SQLContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
         {
@@ -29,6 +34,34 @@ namespace Persistance.Contexts
         {
             ProgrammingLanguageEntity(modelBuilder);
             ProgrammingLanguageTechnologyEntity(modelBuilder);
+            UserEntity(modelBuilder);
+            DeveloperEntity(modelBuilder);
+        }
+
+        private static void DeveloperEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Developer>(a =>
+            {
+                a.ToTable("Developers");
+            });
+        }
+
+        private static void UserEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>(a =>
+            {
+                a.ToTable("User").HasKey(p => p.Id);
+                a.Property(x => x.Id).HasColumnName("Id");
+                a.Property(x => x.FirstName).HasColumnName("FirstName");
+                a.Property(x => x.LastName).HasColumnName("LastName");
+                a.Property(x => x.Email).HasColumnName("Email");
+                a.Property(x => x.PasswordSalt).HasColumnName("PasswordSalt");
+                a.Property(x => x.PasswordHash).HasColumnName("PasswordHash");
+                a.Property(x => x.Status).HasColumnName("Status").HasDefaultValue(true);
+                a.Property(x => x.AuthenticatorType).HasColumnName("AuthenticatorType");
+                a.HasMany(p => p.RefreshTokens);
+                a.HasMany(p => p.UserOperationClaims);
+            });
         }
 
         private static void ProgrammingLanguageEntity(ModelBuilder modelBuilder)

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProgrammingLanguages.Rules
 {
-    public class ProgrammingLanguagesRules
+    public class ProgrammingLanguageBusinessRules
     {
         private readonly IProgrammingLanguageRepository _programmingLanguagesRepository;
 
-        public ProgrammingLanguagesRules(IProgrammingLanguageRepository programmingLanguagesRepository)
+        public ProgrammingLanguageBusinessRules(IProgrammingLanguageRepository programmingLanguagesRepository)
         {
             _programmingLanguagesRepository = programmingLanguagesRepository;
         }
