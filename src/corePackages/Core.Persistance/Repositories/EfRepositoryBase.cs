@@ -126,5 +126,16 @@ namespace Core.Persistance.Repositories
             await Context.SaveChangesAsync();
             return entity;
         }
+
+        public async Task<TEntity?> GetAsync2(Expression<Func<TEntity, bool>> predicate, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null)
+        {
+            var queryable = Query();
+            if (include is not null)
+                queryable = include(queryable);
+            if (predicate is not null)
+                queryable = queryable.Where(predicate);
+            return await queryable.FirstOrDefaultAsync();
+            
+        }
     }
 }

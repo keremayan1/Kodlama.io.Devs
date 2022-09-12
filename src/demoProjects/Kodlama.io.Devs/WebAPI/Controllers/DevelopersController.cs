@@ -1,4 +1,5 @@
-﻿using Application.Features.Developers.Command.RegisterDeveloper;
+﻿using Application.Features.Developers.Command.LoginDeveloper;
+using Application.Features.Developers.Command.RegisterDeveloper;
 using Application.Features.Developers.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,11 +10,17 @@ namespace WebAPI.Controllers
     [ApiController]
     public class DevelopersController : BaseController
     {
-        [HttpPost]
-        public async Task<IActionResult> Add([FromBody] RegisterDeveloperCommand registerDeveloperCommand)
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterDeveloperCommand registerDeveloperCommand)
         {
-            TokenDto tokenDto = await Mediator.Send(registerDeveloperCommand);
-            return Created("", tokenDto);
+            TokenDto result = await Mediator.Send(registerDeveloperCommand);
+            return Created("", result);
+        }
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginDeveloperCommand loginDeveloperCommand)
+        {
+            TokenDto result = await Mediator.Send(loginDeveloperCommand);
+            return Created("", result);
         }
 
     }

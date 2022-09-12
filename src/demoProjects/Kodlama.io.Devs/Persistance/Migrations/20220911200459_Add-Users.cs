@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Persistance.Migrations
 {
-    public partial class AddUser : Migration
+    public partial class AddUsers : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -21,6 +21,8 @@
   <ItemGroup>
     <Folder Include="Features\Developers\Models\" />
     <Folder Include="Features\Developers\Query\" />
+    <Folder Include="Features\Githubs\Rules\" />
+    <Folder Include="Features\Githubs\Validations\" />
     <Folder Include="Features\ProgrammingLanguageTechnologies\Validations\" />
     <Folder Include="Features\ProgrammingLanguageTechnologies\Rules\" />
   </ItemGroup>
