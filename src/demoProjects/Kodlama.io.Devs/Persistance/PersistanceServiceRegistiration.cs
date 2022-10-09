@@ -20,6 +20,10 @@ namespace Persistance
             services.AddScoped<IProgrammingLanguageTechnologyRepository, ProgrammingLanguageTechnologyRepository>();
             services.AddScoped<IDeveloperRepository, DeveloperRepository>();
             services.AddScoped<IGithubRepository, GithubRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
+            services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+            services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
             return services;
         }
     }
