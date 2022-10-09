@@ -23,8 +23,10 @@
     <Folder Include="Features\Developers\Query\" />
     <Folder Include="Features\Githubs\Rules\" />
     <Folder Include="Features\Githubs\Validations\" />
+    <Folder Include="Features\OperationClaims\Rules\" />
     <Folder Include="Features\ProgrammingLanguageTechnologies\Validations\" />
     <Folder Include="Features\ProgrammingLanguageTechnologies\Rules\" />
+    <Folder Include="Features\UserOperationClaims\Rules\" />
   </ItemGroup>
 
 </Project>

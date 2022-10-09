@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,7 +41,7 @@ namespace Persistance.Contexts
             UserEntity(modelBuilder);
             UserOperationClaimEntity(modelBuilder);
             OperationClaimEntity(modelBuilder);
-
+            //modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
         private static void GithubEntity(ModelBuilder modelBuilder)

@@ -12,7 +12,7 @@ using Persistance.Contexts;
 namespace Persistance.Migrations
 {
     [DbContext(typeof(SQLContext))]
-    [Migration("20221009122513_add-jwt")]
+    [Migration("20221009184649_add-jwt")]
     partial class addjwt
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
